@@ -29,12 +29,6 @@
 
 - (void)initKeyboardHandler
 {
-    //set initial keyboard height
-    //for iPhone = 216
-    //TODO: Add default value for iPad
-    keyboardHeight = 216;
-    initialRect = self.frame;
-
     textFields = [[NSMutableArray alloc] init];
 
     [self getAllTextField];
@@ -44,9 +38,6 @@
                                                                           action:@selector(closeKeyboard)];
     tap.cancelsTouchesInView = NO;
     [self addGestureRecognizer:tap];
-
-    //set full screen content size
-    self.contentSize = CGSizeMake(initialRect.size.width, initialRect.size.height);
 }
 
 - (void)getAllTextField
@@ -65,8 +56,13 @@
 #pragma mark - Helpers
 - (void)closeKeyboard
 {
-    [activeTextField resignFirstResponder];
+   [activeTextField resignFirstResponder];
 }
+
+- (void)reinitialize {
+
+}
+
 
 #pragma mark - Keyboard notifications
 - (void)registerForKeyboardNotifications
@@ -88,16 +84,21 @@
 
 - (void)keyboardDidShow:(NSNotification*)notification
 {
+	initialRect = self.frame;
+	//set full screen content size
+    self.contentSize = CGSizeMake(initialRect.size.width, initialRect.size.height);
+
     //get keyboard size
     NSDictionary* info = [notification userInfo];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    keyboardHeight = keyboardSize.height;
+    CGFloat keyboardHeight = keyboardSize.height;
 
-    //set the scrollView size according to the keyboard size
+	//Resize the scroll view to make room for the keyboard
     self.frame = CGRectMake(initialRect.origin.x,
                             initialRect.origin.y,
                             initialRect.size.width,
                             initialRect.size.height - keyboardHeight);
+    [self showActiveTextField];
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
@@ -107,27 +108,18 @@
     self.frame = initialRect;
 }
 
-- (void)showActiveTextField:(UITextField *)activeField
+- (void)showActiveTextField
 {
-    //calculate distance between active text field and keyboard top border
-    CGRect screen = [[UIScreen mainScreen] bounds];
-    CGFloat screenHeight = screen.size.height;
-    CGFloat yKeyboard = screenHeight - keyboardHeight;
-    CGRect fieldFrame = activeField.frame;
-    CGFloat bottomPointTextFiled = fieldFrame.origin.y + fieldFrame.size.height;
-
-    //if keyboard closes active text field - scroll up
-    if (yKeyboard < bottomPointTextFiled) {
-        CGPoint offset = CGPointMake(0.0, activeField.frame.origin.y - keyboardHeight + 10);
-        [self setContentOffset:offset animated:YES];
-    }
+    CGRect textFieldRect = activeTextField.frame;
+    textFieldRect.origin.y += 5;
+    [self scrollRectToVisible:textFieldRect animated:YES];
 }
 
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     activeTextField = textField;
-    [self showActiveTextField:textField];
+	[self showActiveTextField];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -148,4 +140,5 @@
     }
     return YES;
 }
+
 @end

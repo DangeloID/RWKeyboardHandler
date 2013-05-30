@@ -15,7 +15,6 @@
 
 @interface RWKeyboardHandler : UIScrollView <UITextFieldDelegate> {
     NSMutableArray * textFields;
-    CGFloat keyboardHeight;
     UITextField *activeTextField;
     CGRect initialRect;
 }
@@ -23,4 +22,6 @@
 @property (nonatomic, assign) id<RWKeyboardHandlerDelegate> keyboardDelegate;
 
 - (void)closeKeyboard;
+- (void)reinitialize;
+
 @end
