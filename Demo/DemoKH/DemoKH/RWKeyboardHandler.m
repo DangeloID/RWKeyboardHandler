@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Den. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "RWKeyboardHandler.h"
 
 @implementation RWKeyboardHandler
@@ -90,8 +91,9 @@
 
     //get keyboard size
     NSDictionary* info = [notification userInfo];
-    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    CGFloat keyboardHeight = keyboardSize.height;
+    CGRect keyboardFrame = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    CGRect convertedFrame = [self convertRect:keyboardFrame fromView:self.window];
+    CGFloat keyboardHeight = convertedFrame.size.height;
 
 	//Resize the scroll view to make room for the keyboard
     self.frame = CGRectMake(initialRect.origin.x,
