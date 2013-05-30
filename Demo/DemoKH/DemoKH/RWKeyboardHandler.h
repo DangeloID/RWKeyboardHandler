@@ -9,19 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @protocol RWKeyboardHandlerDelegate <NSObject>
-@optional
+//Called when the button is clicked "return" to the last UITextField in the hierarchy.
 - (void)lastTextFieldShouldReturn;
 @end
 
 @interface RWKeyboardHandler : UIScrollView <UITextFieldDelegate> {
-    NSMutableArray * textFields;
-    UITextField *activeTextField;
-    CGRect initialRect;
+    NSMutableArray * textFields; //all found UITextField's
+    UITextField *activeTextField; //current active UITextField
+    CGRect initialRect; //initial UIScrollView rect
 }
 
 @property (nonatomic, assign) id<RWKeyboardHandlerDelegate> keyboardDelegate;
 
+//close active keyboard
 - (void)closeKeyboard;
-- (void)reinitialize;
 
 @end

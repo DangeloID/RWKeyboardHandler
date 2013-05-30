@@ -6,8 +6,29 @@
 //  Copyright (c) 2013 Den. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "RWKeyboardHandler.h"
+
+@interface RWKeyboardHandler ()
+
+//initialization
+- (void)initKeyboardHandler;
+
+//search all UITextField
+- (void)getAllTextField;
+
+//Keyboard notification
+- (void)registerForKeyboardNotifications;
+
+//Get keyboard height and resize UIScrollView
+- (void)keyboardDidShow:(NSNotification *)notification;
+
+//restore UIScrollView size
+- (void)keyboardWillHide:(NSNotification *)notification;
+
+//scroll UITextField to visible
+- (void)showActiveTextField;
+
+@end
 
 @implementation RWKeyboardHandler
 
@@ -60,11 +81,6 @@
    [activeTextField resignFirstResponder];
 }
 
-- (void)reinitialize {
-
-}
-
-
 #pragma mark - Keyboard notifications
 - (void)registerForKeyboardNotifications
 {
@@ -75,12 +91,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification object:nil];
-}
-
-// unregistered for keyboard notifications while not visible.
-- (void)unregisterForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)keyboardDidShow:(NSNotification*)notification
@@ -132,6 +142,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     UITextField *lastField = [textFields lastObject];
+    //if last UITextField then close keyboard
     if ([lastField isEqual:textField]) {
         [self.keyboardDelegate lastTextFieldShouldReturn];
         [self closeKeyboard];

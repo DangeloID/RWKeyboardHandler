@@ -42,7 +42,7 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUITextField" id="31517782">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{244, 207}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
@@ -79,7 +79,7 @@
 							</object>
 							<object class="IBUITextField" id="191487559">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{244, 282}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
@@ -107,11 +107,11 @@
 							</object>
 							<object class="IBUITextField" id="998127385">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{244, 344}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="515411916"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -135,7 +135,7 @@
 							</object>
 							<object class="IBUITextField" id="706560450">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{244, 399}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
@@ -163,7 +163,7 @@
 							</object>
 							<object class="IBUITextField" id="1073265512">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{244, 457}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
@@ -191,7 +191,7 @@
 							</object>
 							<object class="IBUITextField" id="259591385">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{244, 495}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
@@ -219,7 +219,7 @@
 							</object>
 							<object class="IBUITextField" id="927645055">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{244, 562}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
@@ -247,7 +247,7 @@
 							</object>
 							<object class="IBUITextField" id="738528302">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{244, 615}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
@@ -273,38 +273,10 @@
 								<reference key="IBUIFontDescription" ref="236660982"/>
 								<reference key="IBUIFont" ref="550138308"/>
 							</object>
-							<object class="IBUITextField" id="515411916">
-								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{244, 719}, {280, 30}}</string>
-								<reference key="NSSuperview" ref="798392085"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1073265512"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<int key="IBUIContentVerticalAlignment">0</int>
-								<string key="IBUIText"/>
-								<int key="IBUIBorderStyle">3</int>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MAA</bytes>
-									<reference key="NSCustomColorSpace" ref="353827313"/>
-								</object>
-								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
-								<float key="IBUIMinimumFontSize">17</float>
-								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
-									<int key="IBUIReturnKeyType">4</int>
-									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								</object>
-								<reference key="IBUIFontDescription" ref="236660982"/>
-								<reference key="IBUIFont" ref="550138308"/>
-							</object>
 							<object class="IBUITextField" id="686973875">
 								<reference key="NSNextResponder" ref="798392085"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 815}, {728, 30}}</string>
+								<int key="NSvFlags">290</int>
+								<string key="NSFrame">{{20, 666}, {728, 30}}</string>
 								<reference key="NSSuperview" ref="798392085"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -425,25 +397,19 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="1073265512"/>
 							<reference ref="259591385"/>
-							<reference ref="686973875"/>
-							<reference ref="515411916"/>
 							<reference ref="31517782"/>
 							<reference ref="738528302"/>
 							<reference ref="927645055"/>
 							<reference ref="191487559"/>
 							<reference ref="998127385"/>
 							<reference ref="706560450"/>
+							<reference ref="686973875"/>
 						</array>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
 						<reference key="object" ref="738528302"/>
-						<reference key="parent" ref="798392085"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">13</int>
-						<reference key="object" ref="515411916"/>
 						<reference key="parent" ref="798392085"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -496,7 +462,6 @@
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.CustomClassName">RWKeyboardHandler</string>
